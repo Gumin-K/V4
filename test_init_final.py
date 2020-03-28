@@ -1474,7 +1474,7 @@ while True:
 			if message.content == '!죽빵' :
 				await client.get_channel(channel).send('나도 때린다! Q(-o-Q)')
 				result죽빵 = random.randrange(1,6)
-				await PlaySound(voice_client1, './sound/TJ' + str(result) +'.mp3')
+				await PlaySound(voice_client1, './sound/죽빵' + str(result) +'.mp3')
 
 
 			################ 분배 결과 출력 ################ 
