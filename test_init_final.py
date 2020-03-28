@@ -1471,10 +1471,9 @@ while True:
 				await PlaySound(voice_client1, './sound/TJ' + str(resultTJ) +'.mp3')
 				
 			################ 채팅입력 ################ 
-			if message.content == '!죽빵' or message.content == command[30]:
+			if message.content == '!죽빵' :
 				await client.get_channel(channel).send('진실에 방으로')
 				await PlaySound(voice_client1, './sound/죽빵.mp3')
-				print("죽빵")
 
 
 			################ 분배 결과 출력 ################ 
@@ -1531,7 +1530,6 @@ while True:
 				command_list += command[19] + ' [할말]\n\n'     #!상태
 				command_list += command[20] + '\n'     #보스탐
 				command_list += command[21] + '\n'     #!보스탐
-				command_list += command[30] + '\n'     #!
 				command_list += '[보스명]컷 또는 [보스명]컷 0000, 00:00\n'     
 				command_list += '[보스명]멍 또는 [보스명]멍 0000, 00:00\n'     
 				command_list += '[보스명]예상 또는 [보스명]예상 0000, 00:00\n' 
