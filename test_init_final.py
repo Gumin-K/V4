@@ -1470,11 +1470,19 @@ while True:
 				resultTJ = random.randrange(1,9)
 				await PlaySound(voice_client1, './sound/TJ' + str(resultTJ) +'.mp3')
 				
-			################ 채팅입력 ################ 
+			################ 채팅+음성 ################ 
 			if message.content == '!죽빵' :
-				await client.get_channel(channel).send('나도 때린다! Q(-o-Q)')
+				await client.get_channel(channel).send('나도 때린다! 덤벼! Q(-o-Q)')
 				result죽빵 = random.randrange(1,6)
 				await PlaySound(voice_client1, './sound/죽빵' + str(result) +'.mp3')
+
+			################ 채팅 ################ 
+			if message.content == '정신차려라 야옹아' or message.content == '정신차려라' or message.content == '정신차려' or message.content == '정신차려라!!' :
+				await client.get_channel(channel).send('명치한대 때려주십쇼. 거하게 한대 맞겠습니다. (๑•́ ₃ •̀๑)')
+			
+			if message.content == '사랑해' or message.content == '알러뷰' or message.content == '하뚜' or message.content == '하트' :
+				await client.get_channel(channel).send('◟( ˘ ³˘)◞ ♡')
+				await PlaySound(voice_client1, './sound/사나-사랑해.mp3')	
 
 
 			################ 분배 결과 출력 ################ 
