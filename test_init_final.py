@@ -1066,6 +1066,26 @@ while True:
 			if basicSetting[18] != "":
 				if msg.channel.id == int(basicSetting[18]) : #### 킬 채널ID 값넣으면 됨
 					message = await msg.channel.fetch_message(msg.id)
+					
+					################ 채팅+음성 ################ 
+					if message.content == '!죽빵' :
+						await msg.channel.send('드루와! 덤벼! Q(-o-Q)')
+						result죽빵 = random.randrange(1,6)
+						await PlaySound(voice_client1, './sound/죽빵' + str(result죽빵) +'.mp3')
+
+					################ 채팅 ################ 
+					if message.content == '정신차려라 야옹아' or message.content == '정신차려라' or message.content == '정신차려' or message.content == '정신차려라!!' :
+						aawait msg.channel.send('명치한대 때려주십쇼. 거하게 한대 맞겠습니다. (๑•́ ₃ •̀๑)')
+			
+					if message.content == '사랑해' or message.content == '알러뷰' or message.content == '하뚜' or message.content == '하트' :
+						await msg.channel.send('◟( ˘ ³˘)◞ ♡')
+						await PlaySound(voice_client1, './sound/사나-사랑해.mp3')	
+				
+					################ 랜덤채팅 ################ 
+					if message.content.startswith('!뭐먹지'):
+						mylist = ['한식','중식','일식','면','굶어!','패스트푸드','물','빵','떡']
+						data_choice = random.choice(mylist)
+						await msg.channel.send(data_choice)
 
 					################ 킬초기화 ################ 
 					if message.content == command[22]:
@@ -1469,26 +1489,6 @@ while True:
 			if message.content == '!TJ' or message.content == '!tj' :
 				resultTJ = random.randrange(1,9)
 				await PlaySound(voice_client1, './sound/TJ' + str(resultTJ) +'.mp3')
-				
-			################ 채팅+음성 ################ 
-			if message.content == '!죽빵' :
-				await client.get_channel(channel).send('나도 때린다! 덤벼! Q(-o-Q)')
-				result죽빵 = random.randrange(1,6)
-				await PlaySound(voice_client1, './sound/죽빵' + str(result죽빵) +'.mp3')
-
-			################ 채팅 ################ 
-			if message.content == '정신차려라 야옹아' or message.content == '정신차려라' or message.content == '정신차려' or message.content == '정신차려라!!' :
-				await client.get_channel(channel).send('명치한대 때려주십쇼. 거하게 한대 맞겠습니다. (๑•́ ₃ •̀๑)')
-			
-			if message.content == '사랑해' or message.content == '알러뷰' or message.content == '하뚜' or message.content == '하트' :
-				await client.get_channel(channel).send('◟( ˘ ³˘)◞ ♡')
-				await PlaySound(voice_client1, './sound/사나-사랑해.mp3')	
-				
-			################ 랜덤채팅 ################ 
-			if message.content.startswith('!뭐먹지'):
-				mylist = ['한식','중식','일식','면','굶어!','패스트푸드','물','빵','떡']
-				data_choice = random.choice(mylist)
-				await client.get_channel(channel).send(data_choice)
 
 
 			################ 분배 결과 출력 ################ 
