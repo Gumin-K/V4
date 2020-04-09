@@ -1057,7 +1057,7 @@ while True:
 							result = wks.acell(basicSetting[16]).value
 
 							embed = discord.Embed(
-									description= '```' + SearchID + ' 님이 받을 다이야는 ' + result + ' 다이야 입니다.```',
+									description= '```' + SearchID + ' 님이 받을 잼은 ' + result + ' 잼 입니다.```',
 									color=0xff00ff
 									)
 							await msg.channel.send(embed=embed, tts=False)
@@ -1069,18 +1069,18 @@ while True:
 					
 					################ 채팅+음성 ################ 
 					if message.content == '!죽빵' :
-						await msg.channel.send('드루와! 덤벼! Q(-o-Q)')
+						await msg.channel.send('나도 때린다! 덤벼! Q(-o-Q)')
 						result죽빵 = random.randrange(1,6)
 						await PlaySound(voice_client1, './sound/죽빵' + str(result죽빵) +'.mp3')
 
 					################ 채팅 ################ 
 					if message.content == '정신차려라 야옹아' or message.content == '정신차려라' or message.content == '정신차려' or message.content == '정신차려라!!' :
-						aawait msg.channel.send('명치한대 때려주십쇼. 거하게 한대 맞겠습니다. (๑•́ ₃ •̀๑)')
+						await msg.channel.send('명치한대 때려주십쇼. 거하게 한대 맞겠습니다. (๑•́ ₃ •̀๑)')
 			
 					if message.content == '사랑해' or message.content == '알러뷰' or message.content == '하뚜' or message.content == '하트' :
 						await msg.channel.send('◟( ˘ ³˘)◞ ♡')
 						await PlaySound(voice_client1, './sound/사나-사랑해.mp3')	
-				
+			
 					################ 랜덤채팅 ################ 
 					if message.content.startswith('!뭐먹지'):
 						mylist = ['한식','중식','일식','면','굶어!','패스트푸드','물','빵','떡']
