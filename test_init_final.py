@@ -1080,6 +1080,12 @@ while True:
 					if message.content == '사랑해' or message.content == '알러뷰' or message.content == '하뚜' or message.content == '하트' :
 						await msg.channel.send('◟( ˘ ³˘)◞ ♡')
 						await PlaySound(voice_client1, './sound/사나-사랑해.mp3')	
+						
+					if message.content == '야옹아' :
+						await PlaySound(voice_client1, './sound/야옹아.mp3')
+
+					if message.content == '그래' or message.content == '응' or message.content == 'ㅇㅇ' or message.content == 'ㅇㅋ' :
+						await PlaySound(voice_client1, './sound/그래.mp3')	
 			
 					################ 랜덤채팅 ################ 
 					if message.content.startswith('!뭐먹지'):
