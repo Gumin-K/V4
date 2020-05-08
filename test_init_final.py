@@ -2248,7 +2248,7 @@ while True:
 			################ 명존쎄 ################ 
 
 			if message.content == command[7]:
-				await client.get_channel(channel).send( '< 보탐봇 명치 맞고 숨 고르기 중! 잠시만요! >', tts=False)
+				await client.get_channel(channel).send( '< 야옹이 명치 맞고 숨 고르기 중! 잠시만여! >', tts=False)
 				for i in range(bossNum):
 					if bossMungFlag[i] == True:
 						bossTimeString[i] = tmp_bossTime[i].strftime('%H:%M:%S')
@@ -2314,7 +2314,7 @@ while True:
 					result = wks.acell(basicSetting[16]).value
 
 					embed = discord.Embed(
-							description= '```' + SearchID + ' 님이 받을 다이야는 ' + result + ' 다이야 입니다.```',
+							description= '```' + SearchID + ' 님이 받을 잼은 ' + result + ' 다이야 입니다.```',
 							color=0xff00ff
 							)
 					await msg.channel.send(embed=embed, tts=False)
