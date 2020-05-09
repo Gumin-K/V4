@@ -488,7 +488,7 @@ async def task():
 					if basicSetting[3] != '0':
 						if fixed_bossFlag0[i] == False:
 							fixed_bossFlag0[i] = True
-							await client.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
+							await client.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False, delete_after=10)
 							await PlaySound(voice_client1, './sound/' + fixed_bossData[i][0] + '알림1.mp3')
 
 				################ before_alert ################ 
@@ -496,7 +496,7 @@ async def task():
 					if basicSetting[1] != '0' :
 						if fixed_bossFlag[i] == False:
 							fixed_bossFlag[i] = True
-							await client.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
+							await client.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False, delete_after=10)
 							await PlaySound(voice_client1, './sound/' + fixed_bossData[i][0] + '알림.mp3')
 				
 				################ 보스 젠 시간 확인 ################
@@ -508,7 +508,7 @@ async def task():
 							description= "```" + fixed_bossData[i][0] + fixed_bossData[i][4] + "```" ,
 							color=0x00ff00
 							)
-					await client.get_channel(channel).send(embed=embed, tts=False)
+					await client.get_channel(channel).send(embed=embed, tts=False, delete_after=10)
 					await PlaySound(voice_client1, './sound/' + fixed_bossData[i][0] + '젠.mp3')
 
 			################ 일반 보스 확인 ################ 
@@ -519,9 +519,9 @@ async def task():
 						if bossFlag0[i] == False:
 							bossFlag0[i] = True
 							if bossData[i][6] != '' :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False, delete_after=10)
 							else :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False, delete_after=10)
 							await PlaySound(voice_client1, './sound/' + bossData[i][0] + '알림1.mp3')
 
 				################ before_alert ################
@@ -530,9 +530,9 @@ async def task():
 						if bossFlag[i] == False:
 							bossFlag[i] = True
 							if bossData[i][6] != '' :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False, delete_after=10)
 							else :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False, delete_after=10)
 							await PlaySound(voice_client1, './sound/' + bossData[i][0] + '알림.mp3')
 
 				################ 보스 젠 시간 확인 ################ 
@@ -555,7 +555,7 @@ async def task():
 								description= "```" + bossData[i][0] + bossData[i][4] + "```" ,
 								color=0x00ff00
 								)
-					await client.get_channel(channel).send(embed=embed, tts=False)
+					await client.get_channel(channel).send(embed=embed, tts=False, delete_after=10)
 					await PlaySound(voice_client1, './sound/' + bossData[i][0] + '젠.mp3')
 
 				################ 보스 자동 멍 처리 ################ 
@@ -573,7 +573,7 @@ async def task():
 								bossFlag0[i] = (False)
 								bossMungFlag[i] = (False)
 								bossMungCnt[i] = 0
-								await client.get_channel(channel).send('```자동 멍처리 횟수 ' + basicSetting[17] + '회 초과! [' + bossData[i][0] + '] 삭제!```', tts=False)
+								await client.get_channel(channel).send('``` 횟수 ' + basicSetting[17] + '회 초과! [' + bossData[i][0] + '] 삭제!```', tts=False)
 								await dbSave()
 								print ('자동멍처리 횟수초과 <' + bossData[i][0] + ' 삭제완료>')
 							else:
@@ -667,7 +667,7 @@ async def dbSave():
 	
 	datelist = list(set(datelist1))
 
-	information1 = '----- 보스탐 정보 -----\n'
+	information1 = '----- 보스 정보 -----\n'
 	for timestring in sorted(datelist):
 		for i in range(bossNum):
 			if timestring == bossTime[i]:
@@ -787,7 +787,7 @@ async def JointheVC(VCchannel, TXchannel):
 			voice_client1 = await VCchannel.connect(reconnect=True)
 			#await PlaySound(voice_client1, './sound/hello.mp3')
 	else:
-		await TXchannel.send('음성채널에 먼저 들어가주세요.', tts=False)
+		await TXchannel.send('음성채널에 먼저 들어가주세요.', tts=False, delete_after=10)
 
 #사다리함수		
 async def LadderFunc(number, ladderlist, channelVal):
@@ -1331,7 +1331,7 @@ while True:
 							description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 							color=0xff0000
 							)
-					await client.get_channel(channel).send(embed=embed, tts=False)
+					await client.get_channel(channel).send(embed=embed, tts=False, delete_after=10)
 
 				################ 보스 멍 처리 ################ 
 
@@ -1449,7 +1449,7 @@ while True:
 								description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 								color=0xff0000
 								)
-						await client.get_channel(channel).send(embed=embed, tts=False)
+						await client.get_channel(channel).send(embed=embed, tts=False, delete_after=10)
 					else:
 						await client.get_channel(channel).send('```' + bossData[i][0] +' 예상 시간을 입력해주세요.```', tts=False)
 						
@@ -1466,7 +1466,7 @@ while True:
 					bossFlag0[i] = (False)
 					bossMungFlag[i] = (False)
 					bossMungCnt[i] = 0
-					await client.get_channel(channel).send('<' + bossData[i][0] + ' 삭제완료>', tts=False)
+					await client.get_channel(channel).send('<' + bossData[i][0] + ' 삭제완료>', tts=False, delete_after=10)
 					await dbSave()
 					print ('<' + bossData[i][0] + ' 삭제완료>')
 				
@@ -1549,8 +1549,8 @@ while True:
 				command_list += command[18] + ' [공지내용]\n'     #!공지
 				command_list += command[18] + '삭제\n'     #!공지
 				command_list += command[19] + ' [할말]\n\n'     #!상태
-				command_list += command[20] + '\n'     #보스탐
-				command_list += command[21] + '\n'     #!보스탐
+				command_list += command[20] + '\n'     #보스
+				command_list += command[21] + '\n'     #!보스
 				command_list += '[보스명]컷 또는 [보스명]컷 0000, 00:00\n'     
 				command_list += '[보스명]멍 또는 [보스명]멍 0000, 00:00\n'     
 				command_list += '[보스명]예상 또는 [보스명]예상 0000, 00:00\n' 
@@ -1664,7 +1664,7 @@ while True:
 
 			if message.content == command[4]:
 				if message.author.voice == None:
-					await client.get_channel(channel).send('음성채널에 먼저 들어가주세요.', tts=False)
+					await client.get_channel(channel).send('음성채널에 먼저 들어가주세요.', tts=False, delete_after=10)
 				else:
 					voice_channel = message.author.voice.channel
 
@@ -1701,7 +1701,7 @@ while True:
 						repo.update_file(contents.path, "test_setting", result_voiceCH, contents.sha)
 
 					await JointheVC(voice_channel, channel)
-					await client.get_channel(channel).send('< 음성채널 [' + client.get_channel(voice_channel.id).name + '] 접속완료>', tts=False)
+					await client.get_channel(channel).send('< 음성채널 [' + client.get_channel(voice_channel.id).name + '] 접속완료>', tts=False, delete_after=10)
 			
 			################ 저장된 정보 초기화 ################
 						
@@ -1989,7 +1989,7 @@ while True:
 						tmp_boss_information[0] = '``` ```'
 
 					embed = discord.Embed(
-							title = "----- 보스탐 정보 -----",
+							title = "----- 보스 정보 -----",
 							description= boss_information[0],
 							color=0x0000ff
 							)
@@ -2008,7 +2008,7 @@ while True:
 						boss_information[0] = '``` ```'
 
 					embed = discord.Embed(
-							title = "----- 보스탐 정보 -----",
+							title = "----- 보스 정보 -----",
 							description= boss_information[0],
 							color=0x0000ff
 							)
@@ -2178,7 +2178,7 @@ while True:
 					boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 보스탐 정보 -----",
+						title = "----- 보스 정보 -----",
 						description= boss_information[0],
 						color=0x0000ff
 						)
@@ -2268,7 +2268,7 @@ while True:
 				tmp_sayMessage = message.content
 				sayMessage = tmp_sayMessage[len(command[19])+1:]
 				await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name=sayMessage, type=1), afk = False)
-				await client.get_channel(channel).send( '< 상태메세지 변경완료 >', tts=False)
+				await client.get_channel(channel).send( '< 상태메세지 변경완료 >', tts=False, delete_after=10)
 
 			################ 공지확인, 입력 및 삭제 ################ 
 
@@ -2293,12 +2293,12 @@ while True:
 				sayMessage = tmp_sayMessage[len(command[18])+1:]
 				contents = repo.get_contents("notice.ini")
 				repo.update_file(contents.path, "notice 등록", sayMessage, contents.sha)
-				await client.get_channel(channel).send( '< 공지 등록완료 >', tts=False)
+				await client.get_channel(channel).send( '< 공지 등록완료 >', tts=False, delete_after=10)
 			
 			if message.content == command[18] + '삭제':
 				contents = repo.get_contents("notice.ini")
 				repo.update_file(contents.path, "notice 삭제", '', contents.sha)
-				await client.get_channel(channel).send( '< 공지 삭제완료 >', tts=False)
+				await client.get_channel(channel).send( '< 공지 삭제완료 >', tts=False, delete_after=10)
 
 
 			################ 정산확인 ################ 
@@ -2314,7 +2314,7 @@ while True:
 					result = wks.acell(basicSetting[16]).value
 
 					embed = discord.Embed(
-							description= '```' + SearchID + ' 님이 받을 잼은 ' + result + ' 다이야 입니다.```',
+							description= '```' + SearchID + ' 님이 받을 잼은 ' + result + '  입니다.```',
 							color=0xff00ff
 							)
 					await msg.channel.send(embed=embed, tts=False)
