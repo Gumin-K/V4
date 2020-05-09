@@ -1331,7 +1331,7 @@ while True:
 							description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 							color=0xff0000
 							)
-					await client.get_channel(channel).send(embed=embed, tts=False, delete_after=10)
+					await client.get_channel(channel).send(embed=embed, tts=False)
 
 				################ 보스 멍 처리 ################ 
 
