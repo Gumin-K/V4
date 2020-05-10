@@ -2058,6 +2058,7 @@ while True:
 
 				await dbSave()
 				await kill_list_Save()
+				await msg.channel.purge(limit=1)	
 
 			################ 보스타임 출력(고정보스포함) ################ 
 
@@ -2229,6 +2230,7 @@ while True:
 
 				await dbSave()
 				await kill_list_Save()
+				await msg.channel.purge(limit=1)
 
 			################ 현재시간 확인 ################ 
 
