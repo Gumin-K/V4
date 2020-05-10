@@ -1331,7 +1331,7 @@ while True:
 							description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 							color=0xff0000
 							)
-					await client.get_channel(channel).send(embed=embed, tts=False)
+					await client.get_channel(channel).send(embed=embed, tts=False, delete_after=5)
 
 				################ 보스 멍 처리 ################ 
 
@@ -1384,7 +1384,7 @@ while True:
 								description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 								color=0xff0000
 								)
-						await client.get_channel(channel).send(embed=embed, tts=False)
+						await client.get_channel(channel).send(embed=embed, tts=False, delete_after=5)
 					else:
 						if tmp_bossTime[i] < tmp_now :
 
@@ -1405,12 +1405,13 @@ while True:
 									)
 							await client.get_channel(channel).send(embed=embed, tts=False)
 						else:
-							await client.get_channel(channel).send('```' + bossData[i][0] + '탐이 아직 안됐습니다. 다음 ' + bossData[i][0] + '탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
+							await client.get_channel(channel).send('```' + bossData[i][0] + '탐이 아직 안됐습니다. 다음 ' + bossData[i][0] + '탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False, delete_after=5)
 
 					
 			################ 예상 보스 타임 입력 ################ 
 
 				if message.content.startswith(bossData[i][0] +'예상'):
+					await client.get_channel(channel).send('<' + bossData[i][0] + ' 예상 입력완료>', tts=False)
 					if hello.find('  ') != -1 :
 						bossData[i][6] = hello[hello.find('  ')+2:]
 						hello = hello[:hello.find('  ')]
@@ -1449,7 +1450,7 @@ while True:
 								description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 								color=0xff0000
 								)
-						await client.get_channel(channel).send(embed=embed, tts=False, delete_after=10)
+						await client.get_channel(channel).send(embed=embed, tts=False, delete_after=5)
 					else:
 						await client.get_channel(channel).send('```' + bossData[i][0] +' 예상 시간을 입력해주세요.```', tts=False)
 						
