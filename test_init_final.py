@@ -2054,11 +2054,10 @@ while True:
 								description= tmp_boss_information[i+1],
 								color=0x0000ff
 								)
-						await client.get_channel(channel).send( embed=embed, tts=False)
+						await client.get_channel(channel).send( embed=embed, tts=False, delete_after=10)
 
 				await dbSave()
-				await kill_list_Save()
-				await msg.channel.purge(limit=1)	
+				await kill_list_Save()	
 
 			################ 보스타임 출력(고정보스포함) ################ 
 
@@ -2226,11 +2225,10 @@ while True:
 							description= tmp_boss_information[i+1],
 							color=0x0000ff
 							)
-					await client.get_channel(channel).send( embed=embed, tts=False)
+					await client.get_channel(channel).send(embed=embed, tts=False, delete_after=10)
 
 				await dbSave()
 				await kill_list_Save()
-				await msg.channel.purge(limit=1)
 
 			################ 현재시간 확인 ################ 
 
